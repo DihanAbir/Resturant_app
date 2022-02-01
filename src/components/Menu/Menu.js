@@ -6,13 +6,8 @@ import Products from "../Products/Products";
 
 function Menu() {
   return (
-    <div
-      style={{
-        backgroundColor: "rgb(233 233 233)",
-        height: "100%",
-      }}
-    >
-      <MenuHeader />
+    <div className="menu">
+      {/* <MenuHeader /> */}
       <div className="container" style={{ padding: "20px 0px" }}>
         <Banner />
         <Category />

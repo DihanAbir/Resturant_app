@@ -76,7 +76,7 @@ function Product({ product }) {
                 <p>S</p>
               </div>
             </div>
-            <div className="favourite">
+            <div className="favouriteP">
               <FavoriteBorderIcon />
             </div>
           </div>

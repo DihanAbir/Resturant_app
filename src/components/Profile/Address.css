@@ -1,0 +1,123 @@
+.Address {
+  background-image: url("../../assets/Frame 1361.jpg");
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.Address .main {
+  width: 80%;
+  margin: 0 auto;
+}
+.Address .favTitle {
+  margin: 20px 0px;
+}
+
+/* singleItme */
+.Address.singleItme {
+  padding: 10px;
+  margin: 20px 0px;
+  background-color: rgb(70, 49, 49);
+  border-radius: 10px;
+}
+
+.favDetails {
+  padding: 0px;
+  margin: 0;
+}
+.favDetails p {
+  margin: 0;
+  padding: 0px 10px;
+}
+.favDetails .small {
+  font-size: 10px;
+  font-weight: bold;
+}
+.favDetails .midium {
+  font-size: 14px;
+  font-weight: 500;
+}
+.favDetails b {
+  margin: 0 10px;
+  padding: 2px 10px;
+  font-size: 12px;
+  background-color: black;
+  color: #fff;
+  border-radius: 5px;
+  align-items: center;
+  cursor: pointer;
+}
+.favDetails span {
+  display: inline;
+  background-color: black;
+  color: #fff;
+}
+
+/* singleItme */
+/* details */
+.blackcircle {
+  height: 20px;
+  width: 20px;
+
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.details {
+  display: flex;
+  padding: 10px;
+}
+
+.details .personaldetails {
+  display: flex;
+}
+.details .personal,
+.details .address {
+  padding: 0px 30px;
+}
+
+.details .personal h4 {
+  margin: 0px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 33px;
+  /* identical to box height */
+
+  /* 3 */
+
+  color: #222831;
+}
+.details .personal p {
+  padding: 0px;
+  margin: 5px 0px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 25px;
+  /* identical to box height */
+
+  /* 3 */
+
+  color: #222831;
+}
+.details .address p,
+.details .address span {
+  padding: 0px;
+  margin: 5px 0px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 25px;
+  /* identical to box height */
+
+  /* 3 */
+
+  color: #222831;
+}
+
+/* details */

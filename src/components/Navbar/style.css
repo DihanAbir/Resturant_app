@@ -1,24 +1,21 @@
 .navbar {
   background-color: rgb(255, 255, 255);
-  height: 100%;
+  height: 100vh;
   text-align: center;
   width: 100%;
+  /* padding: 0px 0px 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+  justify-content: space-between;
 }
 
 .navbar .active {
   background-color: #333;
   color: #fff;
-  text-align: center;
-  width: 50%;
-  padding: 0.3em 0.1rem;
-  font-size: 35px;
-  border-radius: 20px;
-  margin: 0px;
 }
+
 .navbar p {
   background-color: rgb(255, 255, 255);
   color: #333;
@@ -35,5 +32,12 @@
   width: 60px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 80% 0;
+  /* margin: 80% 0; */
+}
+.upperBar {
+  width: 100%;
+  text-align: -webkit-center;
+}
+.Sidemenu {
+  margin-top: 5vh;
 }

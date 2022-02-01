@@ -1,8 +1,9 @@
-import { Grid } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 // static image
 import AllCat from "../../assets/category/all.svg";
+import AllCatH from "../../assets/category/hover/Group.svg";
+
 import PizzaCat from "../../assets/category/pizza.svg";
 import BurgerCat from "../../assets/category/burger.svg";
 import SandwichCat from "../../assets/category/sandwich.svg";
@@ -12,14 +13,31 @@ import fishCat from "../../assets/category/fish.svg";
 import SoupCat from "../../assets/category/soup.svg";
 
 function Category() {
+  const [isHover, setIsHover] = useState(false);
   return (
     <div className="category">
       <p className="title">Category</p>
 
       <div className="categort_item">
-        <div className="img">
-          <img className="Allcat" src={AllCat} alt="" />
-          <span>All</span>
+        <div
+          style={{
+            backgroundColor: isHover ? "#fff" : "#000",
+            transition: "all 0.5s ease",
+          }}
+          onMouseEnter={() => setIsHover(false)}
+          onMouseLeave={() => setIsHover(true)}
+          className="img"
+        >
+          <img className="Allcat" src={isHover ? AllCat : AllCatH} alt="" />
+
+          <span
+            style={{
+              transition: "all 0.5s ease",
+              color: isHover ? "#000" : "#fff",
+            }}
+          >
+            All
+          </span>
         </div>
 
         <div className="img">

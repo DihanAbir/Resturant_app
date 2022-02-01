@@ -2,6 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 
 import Navbar from "../Navbar/Navbar";
+import MenuHeader from "../MenuHeader/MenuHeader";
 
 function Layout({ children }) {
   return (
@@ -11,7 +12,10 @@ function Layout({ children }) {
           <Navbar />
         </Grid>
         <Grid item xs={11}>
-          {children}
+          <div className='mainpage'>
+            <MenuHeader />
+            {children}
+          </div>
         </Grid>
       </Grid>
     </>

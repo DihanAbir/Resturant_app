@@ -1,17 +1,45 @@
-import { Checkbox, Grid } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
-import pizza from "../../assets/Rectangle 129.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 function Cart() {
   return (
-    <>
+    <div className="Sidecart">
       <div className="cartHeader">
         <p>My Cart</p>
       </div>
 
       {/* cart item  */}
+
+      {[1, 2, 3].map((item) => (
+        <CartItem />
+      ))}
+
+      {/* cart item  */}
+      {/* cart footer  */}
+
+      <div className="cartFooter">
+        <div className="priceDiv">
+          <hr />
+          <div className="price">
+            <b>Total Price</b>
+            <b>$27.60</b>
+          </div>
+        </div>
+
+        <div className="checkoutButton">
+          <button>Checkout</button>
+        </div>
+      </div>
+      {/* cart item  */}
+    </div>
+  );
+}
+
+function CartItem() {
+  const [toggle, setToggle] = useState(true);
+  return (
+    <>
       <div className="cartItem">
         <div className="card">
           <div className="img">{/* <img src={pizza} alt="" /> */}</div>
@@ -22,45 +50,16 @@ function Cart() {
             <small>X1</small>
             <span className="size">
               <div className="s">
-                {/* <Checkbox
-                  defaultChecked={false}
-                  sx={{
-                    color: "#AABBC6 ",
-                    "&.Mui-checked": {
-                      color: "#222831",
-                    },
-                  }}
-                /> */}
                 <input type="checkbox" name="" id="" />
                 <p>S</p>
               </div>
               <div className="s">
-                {" "}
                 <input type="checkbox" name="" id="" />
-                {/* <Checkbox
-                  defaultChecked={false}
-                  sx={{
-                    color: "#AABBC6 ",
-                    "&.Mui-checked": {
-                      color: "#222831",
-                    },
-                  }}
-                /> */}
-                <p>S</p>
+                <p>M</p>
               </div>
               <div className="s">
-                {/* <Checkbox
-                  defaultChecked
-                  sx={{
-                    color: "#AABBC6 ",
-                    "&.Mui-checked": {
-                      color: "#222831",
-                    },
-                  }}
-                  
-                /> */}
                 <input type="checkbox" name="" id="" />
-                <p>S</p>
+                <p>L</p>
               </div>
             </span>
             <small className="cardprice">$13.80</small>
@@ -68,12 +67,17 @@ function Cart() {
         </div>
         <div className="toogle">
           <p>
-            <KeyboardArrowDownIcon />
+            <KeyboardArrowDownIcon
+              onClick={() => setToggle(!toggle)}
+              style={{
+                transform: toggle ? "rotate(180deg)" : "rotate(360deg)",
+              }}
+            />
           </p>
         </div>
       </div>
 
-      <div className="extraAdons">
+      <div className="extraAdons" style={{ display: toggle && "none" }}>
         <div>
           <input
             style={{ alignItems: "center" }}
@@ -119,20 +123,7 @@ function Cart() {
           <p>$1.25</p>
         </div>
       </div>
-
-      <hr />
-
-      <div className="price">
-        <b>Total Price</b>
-        <b>$27.60</b>
-      </div>
-
-      <div className="checkoutButton">
-        <button>Checkout</button>
-      </div>
-      {/* cart item  */}
     </>
   );
 }
-
 export default Cart;
