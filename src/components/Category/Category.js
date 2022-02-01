@@ -5,73 +5,141 @@ import AllCat from "../../assets/category/all.svg";
 import AllCatH from "../../assets/category/hover/Group.svg";
 
 import PizzaCat from "../../assets/category/pizza.svg";
+import PizzaH from "../../assets/category/hover/pixx.svg";
+
 import BurgerCat from "../../assets/category/burger.svg";
+import BurgerH from "../../assets/category/hover/Group (1).svg";
+
 import SandwichCat from "../../assets/category/sandwich.svg";
+import SandwichH from "../../assets/category/hover/Group (2).svg";
+
 import NoodlesCat from "../../assets/category/noodles.svg";
+import NoodlesH from "../../assets/category/hover/icon-park-outline_noodles.svg";
+
 import ChickenCat from "../../assets/category/chicken.svg";
+import ChickenH from "../../assets/category/hover/Group (3).svg";
+
 import fishCat from "../../assets/category/fish.svg";
+import fishH from "../../assets/category/hover/ph_fish.svg";
+
 import SoupCat from "../../assets/category/soup.svg";
+import SoupH from "../../assets/category/hover/Group (4).svg";
 
 function Category() {
   const [isHover, setIsHover] = useState(false);
+  const [isCategory, setIsCategory] = useState("");
   return (
     <div className="category">
       <p className="title">Category</p>
 
       <div className="categort_item">
         <div
-          style={{
-            backgroundColor: isHover ? "#fff" : "#000",
-            transition: "all 0.5s ease",
+          onMouseEnter={() => {
+            setIsCategory("all");
+            setIsHover(false);
           }}
-          onMouseEnter={() => setIsHover(false)}
-          onMouseLeave={() => setIsHover(true)}
+          onMouseLeave={() => setIsCategory("")}
           className="img"
         >
-          <img className="Allcat" src={isHover ? AllCat : AllCatH} alt="" />
+          <img
+            className="Allcat"
+            src={isCategory === "all" ? AllCatH : AllCat}
+            alt=""
+          />
 
           <span
             style={{
               transition: "all 0.5s ease",
-              color: isHover ? "#000" : "#fff",
             }}
           >
             All
           </span>
         </div>
 
-        <div className="img">
-          <img src={PizzaCat} alt="" />
+        <div
+          onMouseEnter={() => {
+            setIsHover(false);
+            setIsCategory("pizza");
+          }}
+          onMouseLeave={() => setIsCategory("")}
+          className="img"
+        >
+          <img src={isCategory === "pizza" ? PizzaH : PizzaCat} alt="" />
           <span>Pizza</span>
         </div>
 
-        <div className="img">
-          <img src={BurgerCat} alt="" />
+        <div
+          onMouseEnter={() => {
+            setIsCategory("burger");
+            setIsHover(false);
+          }}
+          onMouseLeave={() => setIsCategory("")}
+          className="img"
+        >
+          <img src={isCategory === "burger" ? BurgerH : BurgerCat} alt="" />
           <span>Burger</span>
         </div>
 
-        <div className="img">
-          <img src={SandwichCat} alt="" />
+        <div
+          onMouseEnter={() => {
+            setIsCategory("sandwich");
+            setIsHover(false);
+          }}
+          onMouseLeave={() => setIsCategory("")}
+          className="img"
+        >
+          <img
+            src={isCategory === "sandwich" ? SandwichH : SandwichCat}
+            alt=""
+          />
           <span>Sandwich</span>
         </div>
 
-        <div className="img">
-          <img src={NoodlesCat} alt="" />
+        <div
+          onMouseEnter={() => {
+            setIsCategory("noodles");
+            setIsHover(false);
+          }}
+          onMouseLeave={() => setIsCategory("")}
+          className="img"
+        >
+          <img src={isCategory === "noodles" ? NoodlesH : NoodlesCat} alt="" />
           <span>Noodles</span>
         </div>
 
-        <div className="img">
-          <img src={ChickenCat} alt="" />
+        <div
+          onMouseEnter={() => {
+            setIsCategory("chicken");
+            setIsHover(false);
+          }}
+          onMouseLeave={() => setIsCategory("")}
+          className="img"
+        >
+          <img src={isCategory === "chicken" ? ChickenH : ChickenCat} alt="" />
           <span>Chicken</span>
         </div>
 
-        <div className="img">
-          <img src={fishCat} alt="" />
+        <div
+          onMouseEnter={() => {
+            setIsCategory("fish");
+            setIsHover(false);
+          }}
+          onMouseLeave={() => setIsCategory("")}
+          className="img"
+        >
+          <img src={isCategory === "fish" ? fishH : fishCat} alt="" />
           <span>Fish</span>
         </div>
 
-        <div className="img">
-          <img src={SoupCat} alt="" />
+        <div
+          onMouseEnter={() => {
+            setIsCategory("soup");
+            setIsHover(false);
+          }}
+          onMouseLeave={() => setIsCategory("")}
+          className="img"
+        >
+          <img src={isCategory === "soup" ? SoupH : SoupCat} alt="" />
           <span>Soup</span>
         </div>
       </div>

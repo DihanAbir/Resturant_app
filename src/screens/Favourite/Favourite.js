@@ -8,7 +8,7 @@ function Favourite() {
     <div className="favourite">
       <div className="main">
         <Grid container spacing={2}>
-          <Grid item xs={6} sm={6} md={6}>
+          <Grid item xs={8} sm={8} md={8}>
             <h1 className="favTitle">My Favourite</h1>
             {favData.map((item) => (
               <SingleItem item={item} />
@@ -29,17 +29,22 @@ function SingleItem({ item }) {
         <Grid item xs={4} sm={4} md={4}>
           <img src={image} alt="product" className="favImg" />
         </Grid>
-        <Grid item xs={6} sm={8} md={8} sx={{ padding: "0" }}>
+        <Grid item xs={6} sm={8} md={8} sx={{ padding: "20px" }}>
           <div className="favDetails">
             <p className="small">#{id}</p>
             <p className="small">
               {time} | {date}
             </p>
-            <p className="midium" style={{ marginBottom: "0px" }}>
+            <p className="midium" style={{ margin: "10px 0px" }}>
               {title}
             </p>
-            <p className="midium" style={{ marginBottom: "0px" }}>
-              {oldPrice} {newPrice}
+            <p className="small">
+              <small
+                style={{ marginRight: "5px", textDecoration: "line-through" }}
+              >
+                ${oldPrice}
+              </small>
+              ${newPrice}
             </p>
             <b>Reorder</b>
           </div>

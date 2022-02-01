@@ -9,6 +9,8 @@ import visa from "../../assets/card/visa.png";
 function Payment() {
   const card = [visa, master, mastro];
 
+  const [cardType, setCartType] = useState("Debit");
+
   return (
     <div className="favourite payment">
       <div className="main">
@@ -16,16 +18,33 @@ function Payment() {
           <Grid item xs={12} sm={12} md={12}>
             <h1 className="favTitle">Payment</h1>
 
-            <SingleItem title="Credit & Debit cards" images={card} />
-            <Form />
-            <SingleItem title="Cash on delivery" />
-            <Address />
-            <Address />
-            <Address />
+            <SingleItem
+              setCartType={setCartType}
+              cardType={cardType}
+              title="Credit & Debit cards"
+              type="Debit"
+              images={card}
+            />
+            {cardType === "Debit" && <Form />}
+            <SingleItem
+              setCartType={setCartType}
+              cardType={cardType}
+              type="cash"
+              title="Cash on delivery"
+            />
+            {cardType === "cash" && (
+              <div style={{ marginTop: "5%" }}>
+                <h3>+ Add New Address</h3>
+                <Address />
+                <Address />
+                <Address />
+              </div>
+            )}
 
             <div className="button">
               <button className="primaryButton">Done</button>
             </div>
+            <br />
           </Grid>
         </Grid>
       </div>
@@ -33,7 +52,7 @@ function Payment() {
   );
 }
 
-function SingleItem({ title, images }) {
+function SingleItem({ title, images, setCartType, cardType, type }) {
   const [selectD, setSelectD] = useState(false);
 
   console.log(selectD);
@@ -46,9 +65,14 @@ function SingleItem({ title, images }) {
             <div className="checkbox">
               {/* <input type="checkbox" id={id} /> */}
               <p
-                onClick={() => setSelectD(!selectD)}
+                onClick={() => {
+                  setCartType(type);
+                  setSelectD(!selectD);
+                }}
                 className="blackcircle"
-                // style={{ backgroundColor: selectD === true ? "black" : "none" }}
+                style={{
+                  backgroundColor: cardType === type ? "black" : "white",
+                }}
               ></p>
             </div>
             <div className="personaldetails">

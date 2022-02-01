@@ -17,6 +17,7 @@ function ProfileComp() {
         <br />
         <input type="text" id="lname" />
         <br />
+        <br />
         <div className="country">
           <span>
             <SearchIcon />
@@ -27,7 +28,9 @@ function ProfileComp() {
         <br />
         <div className="buttonDiv">
           <button className="cancel">Cancel</button>
-          <button className="primary">Update</button>
+          <button style={{ marginLeft: "10px" }} className="primary">
+            Update
+          </button>
         </div>
       </form>
     </div>

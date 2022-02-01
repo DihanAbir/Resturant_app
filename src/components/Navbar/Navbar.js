@@ -5,6 +5,7 @@ import { BiHomeAlt } from "react-icons/bi";
 import { CgShoppingCart } from "react-icons/cg";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { IoNotificationsOutline } from "react-icons/io5";
+import { FiLogOut } from "react-icons/fi";
 
 import pizza from "../../assets/Rectangle 129.png";
 
@@ -12,6 +13,7 @@ import "./style.css";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
+  console.log("wind", window.location.pathname);
   return (
     <div className="navbar">
       <div className="upperBar">
@@ -46,7 +48,7 @@ function Navbar() {
         </div>
       </div>
       <p className="active">
-        <BiHomeAlt />
+        <FiLogOut />
       </p>
       {/* </div> */}
     </div>

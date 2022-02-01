@@ -2,6 +2,10 @@ import React, { useState } from "react";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
+import Checkbox from "@mui/material/Checkbox";
+
+import { NavLink } from "react-router-dom";
+
 function Cart() {
   return (
     <div className="Sidecart">
@@ -28,7 +32,9 @@ function Cart() {
         </div>
 
         <div className="checkoutButton">
-          <button>Checkout</button>
+          <NavLink to="/payment">
+            <button>Checkout</button>
+          </NavLink>
         </div>
       </div>
       {/* cart item  */}
@@ -79,45 +85,81 @@ function CartItem() {
 
       <div className="extraAdons" style={{ display: toggle && "none" }}>
         <div>
-          <input
+          {/* <input
             style={{ alignItems: "center" }}
             type="radio"
             id="html"
             name="fav_language"
             value="HTML"
+          /> */}
+          <Checkbox
+            defaultChecked={false}
+            sx={{
+              color: "#AABBC6 ",
+              "&.Mui-checked": {
+                color: "#222831",
+              },
+            }}
           />
           <p>Sausage</p>
           <p>$1.25</p>
         </div>
         <div>
-          <input
+          {/* <input
             style={{ alignItems: "center" }}
             type="radio"
             id="html"
             name="fav_language"
             value="HTML"
+          /> */}
+          <Checkbox
+            defaultChecked={false}
+            sx={{
+              color: "#AABBC6 ",
+              "&.Mui-checked": {
+                color: "#222831",
+              },
+            }}
           />
           <p>Sausage</p>
           <p>$1.25</p>
         </div>
         <div>
-          <input
+          {/* <input
             style={{ alignItems: "center" }}
             type="radio"
             id="html"
             name="fav_language"
             value="HTML"
+          /> */}
+          <Checkbox
+            defaultChecked={false}
+            sx={{
+              color: "#AABBC6 ",
+              "&.Mui-checked": {
+                color: "#222831",
+              },
+            }}
           />
           <p>Sausage</p>
           <p>$1.25</p>
         </div>
         <div>
-          <input
+          {/* <input
             style={{ alignItems: "center" }}
             type="radio"
             id="html"
             name="fav_language"
             value="HTML"
+          /> */}
+          <Checkbox
+            defaultChecked={false}
+            sx={{
+              color: "#AABBC6 ",
+              "&.Mui-checked": {
+                color: "#222831",
+              },
+            }}
           />
           <p>Sausage</p>
           <p>$1.25</p>

@@ -4,6 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  margin-top: 17px;
 }
 .cart .main {
   width: 80%;
@@ -22,7 +23,7 @@
 }
 
 .cart .favDetails {
-  padding: 0px;
+  padding: 14px px;
   margin: 0;
 }
 .cart .favDetails p {
@@ -30,12 +31,16 @@
   padding: 0px 10px;
 }
 .cart .favDetails .small {
-  font-size: 10px;
+  font-size: 14px;
   font-weight: bold;
 }
 .cart .favDetails .midium {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.cart .midumMargin {
+  margin-top: 20px;
 }
 .cart .favDetails b {
   margin: 0 10px;

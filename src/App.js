@@ -22,6 +22,7 @@ function App() {
         <Route path="/favourite" element={<Favourite />} />
         <Route path="/nottification" element={<Nottification />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
       {/* </BrowserRouter> */}
       {/* <Payment /> */}

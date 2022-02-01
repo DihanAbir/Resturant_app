@@ -98,7 +98,7 @@
 .buttonDiv .cancel:hover {
   background: #ececec;
 }
-.buttonDiv .primary {
+.Profilemain .buttonDiv .primary {
   cursor: pointer;
   background: #222831;
   border-radius: 5px;

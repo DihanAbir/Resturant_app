@@ -9,6 +9,8 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 import pizza from "../../assets/Rectangle 129.png";
 import ProductsD from "./ProductsData";
+import { pink } from "@mui/material/colors";
+import Radio from "@mui/material/Radio";
 
 function Products() {
   return (
@@ -28,9 +30,22 @@ function Products() {
 }
 
 function Product({ product }) {
+  const [selectedValue, setSelectedValue] = React.useState("a");
+
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
+  const controlProps = (item) => ({
+    checked: selectedValue === item,
+    onChange: handleChange,
+    value: item,
+    name: "color-radio-button-demo",
+    inputProps: { "aria-label": item },
+  });
   return (
     <Grid item lg={3} md={4} sm={6} xs={12}>
-      <div className="item">
+      <div style={{ padding: "10px" }} className="item">
         <div className="img">
           <img src={product.image} alt="" />
         </div>
@@ -39,12 +54,22 @@ function Product({ product }) {
           <div className="top">
             <div className="size">
               <div className="s">
-                <Checkbox
+                {/* <Checkbox
                   defaultChecked={false}
                   sx={{
                     color: "#AABBC6 ",
                     "&.Mui-checked": {
                       color: "#222831",
+                    },
+                  }}
+                /> */}
+                <Radio
+                  {...controlProps("e")}
+                  sx={{
+                    color: "black",
+                    padding: "0px",
+                    "&.Mui-checked": {
+                      color: "black",
                     },
                   }}
                 />
@@ -52,7 +77,7 @@ function Product({ product }) {
               </div>
               <div className="s">
                 {" "}
-                <Checkbox
+                {/* <Checkbox
                   defaultChecked={false}
                   sx={{
                     color: "#AABBC6 ",
@@ -60,11 +85,21 @@ function Product({ product }) {
                       color: "#222831",
                     },
                   }}
+                /> */}
+                <Radio
+                  {...controlProps("f")}
+                  sx={{
+                    color: "black",
+                    padding: "0px 10px",
+                    "&.Mui-checked": {
+                      color: "black",
+                    },
+                  }}
                 />
-                <p>S</p>
+                <p>M</p>
               </div>
               <div className="s">
-                <Checkbox
+                {/* <Checkbox
                   defaultChecked
                   sx={{
                     color: "#AABBC6 ",
@@ -72,8 +107,18 @@ function Product({ product }) {
                       color: "#222831",
                     },
                   }}
+                /> */}
+                <Radio
+                  {...controlProps("g")}
+                  sx={{
+                    color: "black",
+                    padding: "0px 10px",
+                    "&.Mui-checked": {
+                      color: "black",
+                    },
+                  }}
                 />
-                <p>S</p>
+                <p>L</p>
               </div>
             </div>
             <div className="favouriteP">
