@@ -8,10 +8,10 @@ function Banner() {
   return (
     <>
       <Grid container spacing={2}>
-        <Grid item xs={6}>
+        <Grid item md={6} sm={12} xs={12}>
           <Image url={burger} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item md={6} sm={12} xs={12}>
           <Image url={pizza} />
         </Grid>
       </Grid>
@@ -22,7 +22,7 @@ function Banner() {
 function Image({ url, alt = "alt" }) {
   return (
     <>
-      <img  src={url} alt={alt} />
+      <img src={url} alt={alt} />
     </>
   );
 }

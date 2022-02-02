@@ -5,36 +5,39 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Checkbox from "@mui/material/Checkbox";
 
 import { NavLink } from "react-router-dom";
+import { Grid } from "@mui/material";
 
 function Cart() {
   return (
     <div className="Sidecart">
-      <div className="cartHeader">
-        <p>My Cart</p>
-      </div>
-
-      {/* cart item  */}
-
-      {[1, 2, 3].map((item) => (
-        <CartItem />
-      ))}
-
-      {/* cart item  */}
-      {/* cart footer  */}
-
-      <div className="cartFooter">
-        <div className="priceDiv">
-          <hr />
-          <div className="price">
-            <b>Total Price</b>
-            <b>$27.60</b>
-          </div>
+      <div className="lgSideCart">
+        <div className="cartHeader">
+          <p>My Cart</p>
         </div>
 
-        <div className="checkoutButton">
-          <NavLink to="/payment">
-            <button>Checkout</button>
-          </NavLink>
+        {/* cart item  */}
+
+        {[1, 2, 3].map((item) => (
+          <CartItem />
+        ))}
+
+        {/* cart item  */}
+        {/* cart footer  */}
+
+        <div className="cartFooter">
+          <div className="priceDiv">
+            <hr />
+            <div className="price">
+              <b>Total Price</b>
+              <b>$27.60</b>
+            </div>
+          </div>
+
+          <div className="checkoutButton">
+            <NavLink to="/payment">
+              <button>Checkout</button>
+            </NavLink>
+          </div>
         </div>
       </div>
       {/* cart item  */}
@@ -47,40 +50,48 @@ function CartItem() {
   return (
     <>
       <div className="cartItem">
-        <div className="card">
-          <div className="img">{/* <img src={pizza} alt="" /> */}</div>
-        </div>
-        <div className="details">
-          <b>Mushroom Pizza</b>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <small>X1</small>
-            <span className="size">
-              <div className="s">
-                <input type="checkbox" name="" id="" />
-                <p>S</p>
+        <Grid container spacing={2}>
+          <Grid item xs={2}>
+            <div className="card">
+              <div className="img">{/* <img src={pizza} alt="" /> */}</div>
+            </div>
+          </Grid>
+          <Grid item xs={8}>
+            <div className="details">
+              <b>Mushroom Pizza</b>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <small>X1</small>
+                <span className="size">
+                  <div className="s">
+                    <input type="checkbox" name="" id="" />
+                    <p>S</p>
+                  </div>
+                  <div className="s">
+                    <input type="checkbox" name="" id="" />
+                    <p>M</p>
+                  </div>
+                  <div className="s">
+                    <input type="checkbox" name="" id="" />
+                    <p>L</p>
+                  </div>
+                </span>
+                <small className="cardprice">$13.80</small>
               </div>
-              <div className="s">
-                <input type="checkbox" name="" id="" />
-                <p>M</p>
-              </div>
-              <div className="s">
-                <input type="checkbox" name="" id="" />
-                <p>L</p>
-              </div>
-            </span>
-            <small className="cardprice">$13.80</small>
-          </div>
-        </div>
-        <div className="toogle">
-          <p>
-            <KeyboardArrowDownIcon
-              onClick={() => setToggle(!toggle)}
-              style={{
-                transform: toggle ? "rotate(180deg)" : "rotate(360deg)",
-              }}
-            />
-          </p>
-        </div>
+            </div>
+          </Grid>
+          <Grid item xs={2}>
+            <div className="toogle">
+              <p>
+                <KeyboardArrowDownIcon
+                  onClick={() => setToggle(!toggle)}
+                  style={{
+                    transform: toggle ? "rotate(180deg)" : "rotate(360deg)",
+                  }}
+                />
+              </p>
+            </div>
+          </Grid>
+        </Grid>
       </div>
 
       <div className="extraAdons" style={{ display: toggle && "none" }}>

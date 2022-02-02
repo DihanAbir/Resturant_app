@@ -8,10 +8,10 @@ import "./landing.css";
 function Landing() {
   return (
     <Grid container spacing={2}>
-      <Grid item xs={9}>
+      <Grid item xl={10} lg={9} md={9} sm={10} xs={12}>
         <Menu />
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xl={2} lg={3} md={3} sm={1} xs={0} sx={{ padding: "0px" }}>
         <Cart />
       </Grid>
     </Grid>
