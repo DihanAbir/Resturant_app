@@ -255,21 +255,24 @@ img {
 }
 
 .card {
-  /* height: 50%; */
-  /* width: 13%; */
+  height: 81%;
+  width: 100%;
   background-color: #ffebd2;
   padding: 10px;
   border-radius: 10px;
 }
 .card .img {
-  height: 50px;
-  width: 50px;
-  background-image: url(../../assets/Rectangle\ 128.png);
+  /* height: 50px; */
+  /* width: 50px; */
+  /* background-image: url(../../assets/Rectangle\ 128.png); */
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   object-fit: cover;
   border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 .cardprice {
@@ -349,14 +352,42 @@ img {
 .cartFooter {
   /* position: absolute; */
 }
-
 /* cartHeader */
+
+/* .smallNav */
+
+.smallNavMenu {
+  width: 20vh;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  background-color: rgb(218, 213, 213);
+  transition: 0.4s ease-in-out;
+}
+.smallNavMenu p,
+.toggleIcon {
+  /* background-color: rgb(255, 255, 255); */
+  color: #333;
+  text-align: center;
+  /* width: 100%; */
+  /* padding: 0.3em 0.1rem; */
+  font-size: 35px;
+  border-radius: 8px;
+  /* box-shadow: 4px 0px 4px rgb(0 0 0 / 25%); */
+  margin: 15px 0px;
+  text-align: right;
+}
+
+/* .smallNav */
 
 @media (min-width: 1441px) {
   .categort_item {
     display: flex;
     height: 100%;
     /* overflow-x: scroll; */
+  }
+  .smallNav {
+    display: none;
   }
 
   .category .img {
@@ -391,6 +422,22 @@ img {
   .cartItem {
     margin: 10px 0px;
   }
+  .smallNav {
+    display: none;
+  }
+  .cartItem .details b {
+    font-size: 12px;
+  }
+  .cartGridPadding {
+    padding-left: 3px;
+  }
+  .cartItem .details {
+    width: 66%;
+    padding: 0px 32px;
+  }
+  .title {
+    font-size: 16px;
+  }
 }
 @media (min-width: 768px) and (max-width: 899px) {
   .Sidecart .lgSideCart {
@@ -410,6 +457,28 @@ img {
   .category .img img {
     width: 50%;
   }
+
+  .smallNav {
+    display: inline-block;
+  }
+  .cartItem .details {
+    width: 89%;
+    flex-direction: column;
+    padding: 0px 9px;
+  }
+  .cartItem .details b {
+    font-size: 12px;
+  }
+  .cartGridPadding {
+    padding-left: 3px;
+  }
+  .card {
+    height: 52px;
+    width: 100%;
+    background-color: #ffebd2;
+    padding: 10px;
+    border-radius: 10px;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -426,6 +495,9 @@ img {
   }
   .Sidecart .lgSideCart {
     display: none;
+  }
+  .smallNav {
+    display: inline-block;
   }
 }
 @media (max-width: 575.98px) {

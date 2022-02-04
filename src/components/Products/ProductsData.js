@@ -9,48 +9,56 @@ import Product8 from "../../assets/products/unsplash_exSEmuA7R7k.png";
 
 const productData = [
   {
+    id: 5442423423212,
     title: "Big Mac Burger",
     oldPrice: "15.26",
     newPrice: "12.08",
     image: Product,
   },
   {
+    id: 54212423424,
     title: "Big Mac Burger",
     oldPrice: "15.26",
     newPrice: "12.08",
     image: Product2,
   },
   {
+    id: 5424232342412,
     title: "Big Mac Burger",
     oldPrice: "15.26",
     newPrice: "12.08",
     image: Product3,
   },
   {
+    id: 54242312,
     title: "Big Mac Burger",
     oldPrice: "15.26",
     newPrice: "12.08",
     image: Product4,
   },
   {
+    id: 5423212,
     title: "Big Mac Burger",
     oldPrice: "15.26",
     newPrice: "12.08",
     image: Product5,
   },
   {
+    id: 54212,
     title: "Big Mac Burger",
     oldPrice: "15.26",
     newPrice: "12.08",
     image: Product6,
   },
   {
+    id: 54212,
     title: "Big Mac Burger",
     oldPrice: "15.26",
     newPrice: "12.08",
     image: Product7,
   },
   {
+    id: 54212,
     title: "Big Mac Burger",
     oldPrice: "15.26",
     newPrice: "12.08",

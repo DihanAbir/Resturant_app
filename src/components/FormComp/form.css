@@ -1,0 +1,39 @@
+.formsection label {
+  font-size: 15px;
+  font-weight: 500;
+}
+.formsection input,
+.formsection select {
+  width: 96%;
+  height: 40px;
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 5px;
+  padding: 0 7px;
+  font-size: 16px;
+  margin: 10px 0px 10px;
+}
+.formsection select {
+  width: 30%;
+  height: 40px;
+}
+.formsection select:focus {
+  outline: none;
+}
+.formsection input:focus {
+  outline: none;
+}
+.formsection input[type="submit"],
+.formsection input[type="button"] {
+  width: 48%;
+  height: 40px;
+}
+.formsection input[type="button"] {
+  margin-left: 2%;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  font-weight: bold;
+}

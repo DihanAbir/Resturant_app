@@ -13,13 +13,13 @@ function MenuHeader() {
             <img src={logo} alt="" />
           </div>
         </Grid>
-        <Grid item xs={7} style={{ paddingRight: "25px", alignSelf: "center" }}>
+        {/* <Grid item xs={7} style={{ paddingRight: "25px", alignSelf: "center" }}>
           <div className="search">
             <input placeholder="Search here" />
 
             <SearchIcon style={{ color: "#666" }} />
           </div>
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );

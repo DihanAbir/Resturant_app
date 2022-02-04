@@ -5,9 +5,10 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Checkbox from "@mui/material/Checkbox";
 
 import { NavLink } from "react-router-dom";
-import { Grid } from "@mui/material";
+import { Grid, Radio } from "@mui/material";
 
-function Cart() {
+function Cart({ cartItem }) {
+  console.log("cart cartItem", cartItem.length);
   return (
     <div className="Sidecart">
       <div className="lgSideCart">
@@ -17,8 +18,8 @@ function Cart() {
 
         {/* cart item  */}
 
-        {[1, 2, 3].map((item) => (
-          <CartItem />
+        {cartItem.map((item) => (
+          <CartItem item={item} />
         ))}
 
         {/* cart item  */}
@@ -45,41 +46,85 @@ function Cart() {
   );
 }
 
-function CartItem() {
+function CartItem({ item }) {
   const [toggle, setToggle] = useState(true);
+
+  const controlProps = (item) => ({
+    // checked: selectedValue === item,
+    // onChange: handleChange,
+    // value: item,
+    name: "color-radio-button-demo",
+    inputProps: { "aria-label": item },
+  });
   return (
     <>
       <div className="cartItem">
         <Grid container spacing={2}>
-          <Grid item xs={2}>
+          <Grid item xs={3} className="cartGridPadding">
             <div className="card">
-              <div className="img">{/* <img src={pizza} alt="" /> */}</div>
+              <div
+                style={{ backgroundImage: `url( ${item.image})` }}
+                className="img"
+              >
+                {/* <img src={pizza} alt="" /> */}
+              </div>
             </div>
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={7}>
             <div className="details">
-              <b>Mushroom Pizza</b>
+              <b>{item?.title}</b>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <small>X1</small>
                 <span className="size">
                   <div className="s">
-                    <input type="checkbox" name="" id="" />
+                    {/* <input type="checkbox" name="" id="" /> */}
+                    <Radio
+                      {...controlProps("s")}
+                      checked={item.size === "s" && true}
+                      sx={{
+                        color: "black",
+                        padding: "0px",
+                        "&.Mui-checked": {
+                          color: "black",
+                        },
+                      }}
+                    />
                     <p>S</p>
                   </div>
                   <div className="s">
-                    <input type="checkbox" name="" id="" />
+                    <Radio
+                      {...controlProps("s")}
+                      checked={item.size === "m" && true}
+                      sx={{
+                        color: "black",
+                        padding: "0px",
+                        "&.Mui-checked": {
+                          color: "black",
+                        },
+                      }}
+                    />
                     <p>M</p>
                   </div>
                   <div className="s">
-                    <input type="checkbox" name="" id="" />
+                    <Radio
+                      {...controlProps("s")}
+                      checked={item.size === "l" && true}
+                      sx={{
+                        color: "black",
+                        padding: "0px",
+                        "&.Mui-checked": {
+                          color: "black",
+                        },
+                      }}
+                    />
                     <p>L</p>
                   </div>
                 </span>
-                <small className="cardprice">$13.80</small>
+                <small className="cardprice">${item?.newPrice}</small>
               </div>
             </div>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={1}>
             <div className="toogle">
               <p>
                 <KeyboardArrowDownIcon

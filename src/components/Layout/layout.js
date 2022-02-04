@@ -12,9 +12,9 @@ function Layout({ children }) {
           <Navbar />
         </Grid>
         <Grid item xs={11}>
-          <div className='mainpage'>
+          <div className="mainpage">
             <MenuHeader />
-            {children}
+            <div style={{ height: "100%" }}>{children}</div>
           </div>
         </Grid>
       </Grid>
