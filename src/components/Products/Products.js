@@ -9,14 +9,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 import pizza from "../../assets/Rectangle 129.png";
-import ProductsD from "./ProductsData";
 import { pink } from "@mui/material/colors";
 import Radio from "@mui/material/Radio";
 
-function Products({ setCartItem, cartItem, setFavArray, favArray }) {
+function Products({ setCartItem, cartItem, setFavArray, favArray, ProductsD }) {
   return (
     <div className="product">
-      <p className=" titleLeft">View All</p>
+      <p className=" titleLeft"></p>
 
       {/* products showcase  */}
       <Grid container spacing={2}>

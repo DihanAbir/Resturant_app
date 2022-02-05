@@ -7,8 +7,12 @@ import Checkbox from "@mui/material/Checkbox";
 import { NavLink } from "react-router-dom";
 import { Grid, Radio } from "@mui/material";
 
+import { ImCross } from "react-icons/im";
+
 function Cart({ cartItem }) {
   console.log("cart cartItem", cartItem.length);
+
+  const [totalPrice, setTotalPrice] = useState(0);
   return (
     <div className="Sidecart">
       <div className="lgSideCart">
@@ -19,7 +23,11 @@ function Cart({ cartItem }) {
         {/* cart item  */}
 
         {cartItem.map((item) => (
-          <CartItem item={item} />
+          <CartItem
+            item={item}
+            totalPrice={totalPrice}
+            setTotalPrice={setTotalPrice}
+          />
         ))}
 
         {/* cart item  */}
@@ -30,7 +38,7 @@ function Cart({ cartItem }) {
             <hr />
             <div className="price">
               <b>Total Price</b>
-              <b>$27.60</b>
+              <b>${totalPrice}</b>
             </div>
           </div>
 
@@ -46,8 +54,9 @@ function Cart({ cartItem }) {
   );
 }
 
-function CartItem({ item }) {
+function CartItem({ item, setTotalPrice, totalPrice }) {
   const [toggle, setToggle] = useState(true);
+  const [count, setCount] = useState(1);
 
   const controlProps = (item) => ({
     // checked: selectedValue === item,
@@ -56,9 +65,33 @@ function CartItem({ item }) {
     name: "color-radio-button-demo",
     inputProps: { "aria-label": item },
   });
+
+  const itemPrice = (item?.newPrice * count).toFixed(2);
+
+  setTotalPrice(itemPrice);
   return (
     <>
       <div className="cartItem">
+        <Grid item xs={1}>
+          <div className="toogle">
+            <p>
+              <KeyboardArrowDownIcon
+                onClick={() => setCount(count + 1)}
+                style={{
+                  transform: "rotate(180deg)",
+                }}
+              />
+            </p>
+            <p>
+              <KeyboardArrowDownIcon
+                onClick={() => count > 1 && setCount(count - 1)}
+                style={{
+                  transform: "rotate(360deg)",
+                }}
+              />
+            </p>
+          </div>
+        </Grid>
         <Grid container spacing={2}>
           <Grid item xs={3} className="cartGridPadding">
             <div className="card">
@@ -74,7 +107,7 @@ function CartItem({ item }) {
             <div className="details">
               <b>{item?.title}</b>
               <div style={{ display: "flex", alignItems: "center" }}>
-                <small>X1</small>
+                <small>X {count}</small>
                 <span className="size">
                   <div className="s">
                     {/* <input type="checkbox" name="" id="" /> */}
@@ -120,12 +153,15 @@ function CartItem({ item }) {
                     <p>L</p>
                   </div>
                 </span>
-                <small className="cardprice">${item?.newPrice}</small>
+                <small className="cardprice">${itemPrice}</small>
               </div>
             </div>
           </Grid>
           <Grid item xs={1}>
             <div className="toogle">
+              <p>
+                <ImCross />
+              </p>
               <p>
                 <KeyboardArrowDownIcon
                   onClick={() => setToggle(!toggle)}
@@ -138,6 +174,29 @@ function CartItem({ item }) {
           </Grid>
         </Grid>
       </div>
+      {/* <div className="cartMain">
+        <Grid container spacing={2}>
+          <Grid item xs={2} className="cartGrid">
+            <div className="card">
+              <div
+                style={{
+                  backgroundImage: `url( ${item.image})`,
+                  height: "100%",
+                  width: "100%",
+                  backgroundSize: "cover",
+                  objectFit: "containe",
+                }}
+              >
+                <img src={pizza} alt="" />
+              </div>
+            </div>
+          </Grid>
+          <Grid item xs={8}>
+            <p style={{ padding: "0px 10px" }}>Big Mac Burger</p>
+            <small style={{ padding: "0px 10px" }}>X 1</small>
+          </Grid>
+        </Grid>
+      </div> */}
 
       <div className="extraAdons" style={{ display: toggle && "none" }}>
         <div>

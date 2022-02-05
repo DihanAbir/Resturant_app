@@ -54,6 +54,29 @@
   justify-content: center;
 }
 
+.mid-nav {
+  position: absolute;
+  background-color: rgb(7, 3, 44);
+  z-index: 100;
+  top: -50%;
+  width: 10%;
+}
+.mid-nav p {
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(rgb(19, 255, 176), rgb(7, 234, 241));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.mid-nav p:hover {
+  background-color: rgb(7, 134, 92);
+  background: -webkit-linear-gradient(rgb(7, 134, 92), rgb(1, 125, 129));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
 @media (min-width: 1441px) {
   .navbar p {
   }

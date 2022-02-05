@@ -9,7 +9,7 @@ function Landing({ favArray, setFavArray }) {
   const [cartItem, setCartItem] = useState([]);
   return (
     <Grid container spacing={2}>
-      <Grid item xl={10} lg={9} md={9} sm={11} xs={12}>
+      <Grid item xl={9} lg={9} md={9} sm={11} xs={12}>
         <Menu
           setCartItem={setCartItem}
           cartItem={cartItem}
@@ -17,7 +17,7 @@ function Landing({ favArray, setFavArray }) {
           setFavArray={setFavArray}
         />
       </Grid>
-      <Grid item xl={2} lg={3} md={3} sm={1} xs={0} sx={{ padding: "0px" }}>
+      <Grid item xl={3} lg={3} md={3} sm={1} xs={0} sx={{ padding: "0px" }}>
         <Cart cartItem={cartItem} />
       </Grid>
     </Grid>

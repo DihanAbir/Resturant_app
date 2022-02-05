@@ -25,7 +25,7 @@ import fishH from "../../assets/category/hover/ph_fish.svg";
 import SoupCat from "../../assets/category/soup.svg";
 import SoupH from "../../assets/category/hover/Group (4).svg";
 
-function Category() {
+function Category({ setIsActiveCat, isActiveCat }) {
   const [isHover, setIsHover] = useState(false);
   const [isCategory, setIsCategory] = useState("");
   return (
@@ -38,18 +38,27 @@ function Category() {
             setIsCategory("all");
             setIsHover(false);
           }}
+          onClick={() => {
+            setIsActiveCat("all");
+          }}
           onMouseLeave={() => setIsCategory("")}
           className="img"
+          style={{
+            backgroundColor:
+              isCategory === "all" || isActiveCat === "all" ? "#000" : "white",
+          }}
         >
           <img
             className="Allcat"
-            src={isCategory === "all" ? AllCatH : AllCat}
+            src={
+              isCategory === "all" || isActiveCat === "all" ? AllCatH : AllCat
+            }
             alt=""
           />
 
           <span
             style={{
-              transition: "all 0.5s ease",
+              color: isActiveCat === "all" ? "white" : "black",
             }}
           >
             All
@@ -61,11 +70,36 @@ function Category() {
             setIsHover(false);
             setIsCategory("pizza");
           }}
+          onClick={() => {
+            setIsActiveCat("pizza");
+          }}
           onMouseLeave={() => setIsCategory("")}
           className="img"
+          onClick={() => {
+            setIsActiveCat("pizza");
+          }}
+          style={{
+            backgroundColor:
+              isCategory === "pizza" || isActiveCat === "pizza"
+                ? "#000"
+                : "white",
+          }}
         >
-          <img src={isCategory === "pizza" ? PizzaH : PizzaCat} alt="" />
-          <span>Pizza</span>
+          <img
+            src={
+              isCategory === "pizza" || isActiveCat === "pizza"
+                ? PizzaH
+                : PizzaCat
+            }
+            alt=""
+          />
+          <span
+            style={{
+              color: isActiveCat === "pizza" ? "white" : "black",
+            }}
+          >
+            Pizza
+          </span>
         </div>
 
         <div
@@ -73,11 +107,34 @@ function Category() {
             setIsCategory("burger");
             setIsHover(false);
           }}
+          
           onMouseLeave={() => setIsCategory("")}
           className="img"
+          onClick={() => {
+            setIsActiveCat("burger");
+          }}
+          style={{
+            backgroundColor:
+              isCategory === "burger" || isActiveCat === "burger"
+                ? "#000"
+                : "white",
+          }}
         >
-          <img src={isCategory === "burger" ? BurgerH : BurgerCat} alt="" />
-          <span>Burger</span>
+          <img
+            src={
+              isCategory === "burger" || isActiveCat === "burger"
+                ? BurgerH
+                : BurgerCat
+            }
+            alt=""
+          />
+          <span
+            style={{
+              color: isActiveCat === "sandwich" ? "white" : "black",
+            }}
+          >
+            Burger
+          </span>
         </div>
 
         <div
@@ -85,14 +142,36 @@ function Category() {
             setIsCategory("sandwich");
             setIsHover(false);
           }}
+          onClick={() => {
+            setIsActiveCat("sandwich");
+          }}
           onMouseLeave={() => setIsCategory("")}
           className="img"
+          onClick={() => {
+            setIsActiveCat("sandwich");
+          }}
+          style={{
+            backgroundColor:
+              isCategory === "sandwich" || isActiveCat === "sandwich"
+                ? "#000"
+                : "white",
+          }}
         >
           <img
-            src={isCategory === "sandwich" ? SandwichH : SandwichCat}
+            src={
+              isCategory === "sandwich" || isActiveCat === "sandwich"
+                ? SandwichH
+                : SandwichCat
+            }
             alt=""
           />
-          <span>Sandwich</span>
+          <span
+            style={{
+              color: isActiveCat === "sandwich" ? "white" : "black",
+            }}
+          >
+            Sandwich
+          </span>
         </div>
 
         <div
@@ -102,9 +181,31 @@ function Category() {
           }}
           onMouseLeave={() => setIsCategory("")}
           className="img"
+          onClick={() => {
+            setIsActiveCat("noodles");
+          }}
+          style={{
+            backgroundColor:
+              isCategory === "noodles" || isActiveCat === "noodles"
+                ? "#000"
+                : "white",
+          }}
         >
-          <img src={isCategory === "noodles" ? NoodlesH : NoodlesCat} alt="" />
-          <span>Noodles</span>
+          <img
+            src={
+              isCategory === "noodles" || isActiveCat === "noodles"
+                ? NoodlesH
+                : NoodlesCat
+            }
+            alt=""
+          />
+          <span
+            style={{
+              color: isActiveCat === "noodles" ? "white" : "black",
+            }}
+          >
+            Noodles
+          </span>
         </div>
 
         <div
@@ -114,9 +215,31 @@ function Category() {
           }}
           onMouseLeave={() => setIsCategory("")}
           className="img"
+          onClick={() => {
+            setIsActiveCat("chicken");
+          }}
+          style={{
+            backgroundColor:
+              isCategory === "chicken" || isActiveCat === "chicken"
+                ? "#000"
+                : "white",
+          }}
         >
-          <img src={isCategory === "chicken" ? ChickenH : ChickenCat} alt="" />
-          <span>Chicken</span>
+          <img
+            src={
+              isCategory === "chicken" || isActiveCat === "chicken"
+                ? ChickenH
+                : ChickenCat
+            }
+            alt=""
+          />
+          <span
+            style={{
+              color: isActiveCat === "chicken" ? "white" : "black",
+            }}
+          >
+            Chicken
+          </span>
         </div>
 
         <div
@@ -126,9 +249,29 @@ function Category() {
           }}
           onMouseLeave={() => setIsCategory("")}
           className="img"
+          onClick={() => {
+            setIsActiveCat("fish");
+          }}
+          style={{
+            backgroundColor:
+              isCategory === "fish" || isActiveCat === "fish"
+                ? "#000"
+                : "white",
+          }}
         >
-          <img src={isCategory === "fish" ? fishH : fishCat} alt="" />
-          <span>Fish</span>
+          <img
+            src={
+              isCategory === "fish" || isActiveCat === "fish" ? fishH : fishCat
+            }
+            alt=""
+          />
+          <span
+            style={{
+              color: isActiveCat === "fish" ? "white" : "black",
+            }}
+          >
+            Fish
+          </span>
         </div>
 
         <div
@@ -138,9 +281,29 @@ function Category() {
           }}
           onMouseLeave={() => setIsCategory("")}
           className="img"
+          onClick={() => {
+            setIsActiveCat("soup");
+          }}
+          style={{
+            backgroundColor:
+              isCategory === "soup" || isActiveCat === "soup"
+                ? "#000"
+                : "white",
+          }}
         >
-          <img src={isCategory === "soup" ? SoupH : SoupCat} alt="" />
-          <span>Soup</span>
+          <img
+            src={
+              isCategory === "soup" || isCategory === "soup" ? SoupH : SoupCat
+            }
+            alt=""
+          />
+          <span
+            style={{
+              color: isActiveCat === "soup" ? "white" : "black",
+            }}
+          >
+            Soup
+          </span>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Link } from "@mui/material";
 
 import { BiHomeAlt } from "react-icons/bi";
 import { CgShoppingCart } from "react-icons/cg";
@@ -41,7 +41,6 @@ function Navbar() {
               </NavLink>
 
               <NavLink to="/cart">
-                {" "}
                 <p>
                   <CgShoppingCart />
                 </p>
@@ -62,7 +61,7 @@ function Navbar() {
 
         <div className="smallNav">
           <div className="sm-menu menu2 menu-lg">
-            <p className="toggleIcon" onClick={() => setToggle(!toggle)}>
+            <h2 className="toggleIcon" onClick={() => setToggle(!toggle)}>
               {toggle ? (
                 <MenuOpenIcon
                   style={{ fontSize: "3rem", marginLeft: "-60%" }}
@@ -70,14 +69,46 @@ function Navbar() {
               ) : (
                 <MenuIcon style={{ fontSize: "3rem", marginLeft: "-60%" }} />
               )}
-            </p>
+            </h2>
           </div>
         </div>
         {/* </div> */}
       </div>
       {toggle && (
-        <div className="smallNavMenu">
-          <p>Ok</p>
+        <div
+          className="mid-nav"
+          style={{ top: toggle && "10%", transition: "0.4s ease-in-out" }}
+        >
+          <div className="upperBar">
+            <div className="Sidemenu">
+              <NavLink to="/">
+                <p className="active">
+                  <BiHomeAlt />
+                </p>
+              </NavLink>
+              <NavLink to="/favourite">
+                <p>
+                  <MdOutlineFavoriteBorder />
+                </p>
+              </NavLink>
+
+              <NavLink to="/cart">
+                <p>
+                  <CgShoppingCart />
+                </p>
+              </NavLink>
+              <NavLink to="/nottification">
+                <p>
+                  <IoNotificationsOutline />
+                </p>
+              </NavLink>
+            </div>
+          </div>
+          <div className="logout">
+            <p className="active">
+              <FiLogOut />
+            </p>
+          </div>
         </div>
       )}
     </div>
