@@ -26,10 +26,12 @@ function SingleItem({ item }) {
   return (
     <div className="singleItme ">
       <Grid container>
-        <Grid item xs={4} sm={4} md={2}>
-          <img src={image} alt="product" className="favImg" />
+        <Grid item xs={4} sm={4} md={4}>
+          <div className="img">
+            <img src={image} alt="product" className="favImg" />
+          </div>
         </Grid>
-        <Grid item xs={6} sm={8} md={8} sx={{ padding: "0" }}>
+        <Grid item xs={8} sm={8} md={8} sx={{ padding: "0" }}>
           <div className="favDetails">
             <p className="midium">{title}</p>
             <p className="small">{des}</p>

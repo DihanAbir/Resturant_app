@@ -16,6 +16,7 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [toggle, setToggle] = React.useState(false);
+  const [activeNav, setActiveNav] = React.useState("home");
 
   console.log("wind", window.location.pathname);
   return (
@@ -29,24 +30,43 @@ function Navbar() {
               </div>
             </NavLink>
             <div className="Sidemenu">
-              <NavLink to="/">
-                <p className="active">
+              <NavLink to="/" onClick={() => setActiveNav("home")}>
+                <p
+                  style={{ border: activeNav === "home" && "2px solid black" }}
+                  className="active"
+                >
                   <BiHomeAlt />
                 </p>
               </NavLink>
-              <NavLink to="/favourite">
-                <p>
+              <NavLink
+                to="/favourite"
+                onClick={() => setActiveNav("favourite")}
+              >
+                <p
+                  style={{
+                    border: activeNav === "favourite" && "2px solid black",
+                  }}
+                >
                   <MdOutlineFavoriteBorder />
                 </p>
               </NavLink>
 
-              <NavLink to="/cart">
-                <p>
+              <NavLink to="/cart" onClick={() => setActiveNav("cart")}>
+                <p
+                  style={{ border: activeNav === "cart" && "2px solid black" }}
+                >
                   <CgShoppingCart />
                 </p>
               </NavLink>
-              <NavLink to="/nottification">
-                <p>
+              <NavLink
+                to="/nottification"
+                onClick={() => setActiveNav("nottification")}
+              >
+                <p
+                  style={{
+                    border: activeNav === "nottification" && "2px solid black",
+                  }}
+                >
                   <IoNotificationsOutline />
                 </p>
               </NavLink>
@@ -81,30 +101,49 @@ function Navbar() {
         >
           <div className="upperBar">
             <div className="Sidemenu">
-              <NavLink to="/">
-                <p className="active">
+              <NavLink to="/" onClick={() => setActiveNav("home")}>
+                <p
+                  style={{ border: activeNav === "home" && "2px solid black" }}
+                  className="active"
+                >
                   <BiHomeAlt />
                 </p>
               </NavLink>
-              <NavLink to="/favourite">
-                <p>
+              <NavLink
+                to="/favourite"
+                onClick={() => setActiveNav("favourite")}
+              >
+                <p
+                  style={{
+                    border: activeNav === "favourite" && "2px solid black",
+                  }}
+                >
                   <MdOutlineFavoriteBorder />
                 </p>
               </NavLink>
 
-              <NavLink to="/cart">
-                <p>
+              <NavLink to="/cart" onClick={() => setActiveNav("cart")}>
+                <p
+                  style={{ border: activeNav === "cart" && "2px solid black" }}
+                >
                   <CgShoppingCart />
                 </p>
               </NavLink>
-              <NavLink to="/nottification">
-                <p>
+              <NavLink
+                to="/nottification"
+                onClick={() => setActiveNav("nottification")}
+              >
+                <p
+                  style={{
+                    border: activeNav === "nottification" && "2px solid black",
+                  }}
+                >
                   <IoNotificationsOutline />
                 </p>
               </NavLink>
             </div>
           </div>
-          <div className="logout">
+          <div className="logout" onClick={() => setActiveNav()}>
             <p className="active">
               <FiLogOut />
             </p>

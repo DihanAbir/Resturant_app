@@ -13,6 +13,8 @@ function Cart({ cartItem }) {
   console.log("cart cartItem", cartItem.length);
 
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const total = cartItem.reduce((total, prd) => total + prd?.newPrice, 0);
   return (
     <div className="Sidecart">
       <div className="lgSideCart">
@@ -22,32 +24,48 @@ function Cart({ cartItem }) {
 
         {/* cart item  */}
 
-        {cartItem.map((item) => (
-          <CartItem
-            item={item}
-            totalPrice={totalPrice}
-            setTotalPrice={setTotalPrice}
-          />
-        ))}
+        {cartItem.length > 0 ? (
+          cartItem.map((item) => (
+            <CartItem
+              item={item}
+              totalPrice={totalPrice}
+              setTotalPrice={setTotalPrice}
+            />
+          ))
+        ) : (
+          <p
+            style={{
+              textAlign: "center",
+              fontSize: "20px",
+              fontWeight: "bold",
+            }}
+          >
+            No Product added yet
+          </p>
+        )}
 
         {/* cart item  */}
         {/* cart footer  */}
 
-        <div className="cartFooter">
-          <div className="priceDiv">
-            <hr />
-            <div className="price">
-              <b>Total Price</b>
-              <b>${totalPrice}</b>
+        {cartItem.length > 0 ? (
+          <div className="cartFooter">
+            <div className="priceDiv">
+              <hr />
+              <div className="price">
+                <b>Total Price</b>
+                <b>${total}</b>
+              </div>
+            </div>
+
+            <div className="checkoutButton">
+              <NavLink to="/payment">
+                <button>Checkout</button>
+              </NavLink>
             </div>
           </div>
-
-          <div className="checkoutButton">
-            <NavLink to="/payment">
-              <button>Checkout</button>
-            </NavLink>
-          </div>
-        </div>
+        ) : (
+          ""
+        )}
       </div>
       {/* cart item  */}
     </div>

@@ -8,7 +8,7 @@ function Cart() {
     <div className="cart">
       <div className="main">
         <Grid container spacing={2}>
-          <Grid item xs={8} sm={8} md={8}>
+          <Grid item xs={8} md={12} xs={12}>
             <h1 className="favTitle">My Cart</h1>
             {cartData.map((item) => (
               <SingleItem item={item} />
@@ -27,7 +27,9 @@ function SingleItem({ item }) {
     <div className="singleItme">
       <Grid container>
         <Grid item xs={4} sm={4} md={4}>
-          <img src={image} alt="product" className="favImg" />
+          <div className="img">
+            <img src={image} alt="product" className="favImg" />
+          </div>
         </Grid>
         <Grid item xs={6} sm={8} md={8} sx={{ padding: "20px" }}>
           <div className="favDetails">

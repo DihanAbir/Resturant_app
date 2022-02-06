@@ -68,3 +68,45 @@
 }
 
 /* singleItme */
+
+@media (min-width: 1441px) {
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .notification .singleItme .img {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .notification .singleItme .img {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .notification .singleItme .img {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+@media (max-width: 575.98px) {
+  .notification .main {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .notification .singleItme.img {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .notification .favDetails .midium {
+    font-size: 15px;
+    font-weight: 400;
+  }
+}

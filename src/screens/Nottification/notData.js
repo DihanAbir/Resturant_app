@@ -5,13 +5,13 @@ const notData = [
   {
     id: 2541,
     title: "Sed ut perspiciatis unde omnis",
-    des: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.",
+    des: "Nemo enim ipsam voluptatem quia voluptas ",
     image: Product,
   },
   {
     id: 2541,
     title: "Sed ut perspiciatis unde omnis",
-    des: "Qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.",
+    des: "Qui ratione voluptatem sequi nesciunt. .",
     image: Product2,
   },
 ];
