@@ -391,6 +391,36 @@ img {
   transform: scale(1.4);
 }
 
+.sm-cart {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 92%;
+  background-color: rgb(218, 213, 213);
+  transition: 0.4s ease-in-out;
+  padding: 10px 10px;
+  background: #ffa90c;
+  color: white;
+  font-size: 30px;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+}
+.sm-cartFull {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 92%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  transition: 0.4s ease-in-out;
+  padding: 10px 10px;
+  /* background: #ffa90c; */
+  color: rgb(10, 10, 10);
+  font-size: 30px;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+}
+
 /* .smallNav */
 
 @media (min-width: 1441px) {
